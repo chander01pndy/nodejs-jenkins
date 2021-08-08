@@ -11,13 +11,7 @@ node {
          sh 'echo "TEST PASSED"' 
       }  
     }
-     stage('Cleaning up') { 
-
-       steps { 
-         sh "docker rmi $app:$env:$BUILD_NUMBER"
-             
-      }
-     }
+     
      stage('Push Image'){
        docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {            
        app.push("${env.BUILD_NUMBER}")            
