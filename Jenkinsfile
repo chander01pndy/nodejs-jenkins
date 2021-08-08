@@ -14,7 +14,7 @@ node {
      stage('Cleaning up') { 
 
        steps { 
-         sh "docker rmi $app:$env.BUILD_NUMBER"
+         sh "docker rmi $app:$env:$BUILD_NUMBER"
              
       }
      }
