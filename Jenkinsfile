@@ -12,6 +12,12 @@ node {
       }  
     }
      
+     stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $app.build"
+      }
+    }
+     
      stage('Push Image'){
        docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {            
        app.push("${env.BUILD_NUMBER}")            
