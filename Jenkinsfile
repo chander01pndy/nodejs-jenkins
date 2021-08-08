@@ -20,9 +20,5 @@ node {
        app.push("latest")   
    }
 }
-     stage('Remove Unused docker image') {
-      steps{
-        sh "docker rmi $app:$env.BUILD_NUMBER"
-      }
-    }
+     
 }
