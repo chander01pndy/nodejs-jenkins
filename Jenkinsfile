@@ -20,11 +20,5 @@ node {
        app.push("latest")   
    }
 }
-     stage('Cleaning up') {
-       steps {
-       sh "docker rmi $app
-       }
-          
-     }
 
 }
