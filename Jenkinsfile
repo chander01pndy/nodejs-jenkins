@@ -3,7 +3,7 @@ node {
      stage('clone repository') {
       checkout scm  
     }
-     stage('Build docker Image'){
+     stage('Build docker Imagess'){
       app = docker.build("chanderpndy01/chander")
     }
      stage('Test Image'){
